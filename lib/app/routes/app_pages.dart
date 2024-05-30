@@ -6,6 +6,8 @@ import '../modules/login/bindings/login_binding.dart';
 import '../modules/login/views/login_view.dart';
 import '../modules/nearby/bindings/nearby_binding.dart';
 import '../modules/nearby/views/nearby_view.dart';
+import '../modules/register/bindings/register_binding.dart';
+import '../modules/register/views/register_view.dart';
 import '../modules/search/bindings/search_binding.dart';
 import '../modules/search/views/search_view.dart';
 import '/app/modules/home/bindings/home_binding.dart';
@@ -48,8 +50,13 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.NEARBY,
-      page: () =>  NearbyView(),
+      page: () => NearbyView(),
       binding: NearbyBinding(),
+    ),
+    GetPage(
+      name: _Paths.REGISTER,
+      page: () => const RegisterView(),
+      binding: RegisterBinding(),
     ),
   ];
 }

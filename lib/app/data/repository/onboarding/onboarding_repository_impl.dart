@@ -1,4 +1,5 @@
 import 'package:flutter_getx_template/app/modules/login/model/login_model.dart';
+import 'package:flutter_getx_template/app/modules/register/model/register_model.dart';
 import 'package:get/get.dart';
 
 import '../../remote/onboarding/onboarding_remote_data_source.dart';
@@ -15,5 +16,10 @@ class OnboardingRepositoryImpl implements OnboardingRepository {
   @override
   Future<LoginModel> login(Map<String, dynamic> body) {
     return _remoteSource.login(body);
+  }
+
+  @override
+  Future<RegisterModel> register(Map<String, dynamic> body) {
+    return _remoteSource.register(body);
   }
 }

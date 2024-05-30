@@ -14,6 +14,7 @@ abstract class Routes {
   static const SEARCH = _Paths.SEARCH;
   static const CART = _Paths.CART;
   static const NEARBY = _Paths.NEARBY;
+  static const REGISTER = _Paths.REGISTER;
 }
 
 abstract class _Paths {
@@ -27,4 +28,5 @@ abstract class _Paths {
   static const SEARCH = '/search';
   static const CART = '/cart';
   static const NEARBY = '/nearby';
+  static const REGISTER = '/register';
 }
