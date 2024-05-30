@@ -9,8 +9,8 @@ abstract class AppColors {
 
   static const Color centerTextColor = Colors.grey;
   static const MaterialColor colorPrimarySwatch = Colors.cyan;
-  static const Color colorPrimary = Color(0xFF38686A);
-  static const Color colorAccent = Color(0xFF38686A);
+  static const Color colorPrimary = Color(0xFFF97B22);
+  static const Color colorAccent = Color(0xFFFEE8B0);
   static const Color colorLightGreen = Color(0xFF00EFA7);
   static const Color colorWhite = Color(0xFFFFFFFF);
   static const Color lightGreyColor = Color(0xFFC4C4C4);

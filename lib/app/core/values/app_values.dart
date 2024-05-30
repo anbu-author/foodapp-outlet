@@ -96,4 +96,13 @@ abstract class AppValues {
   static const int defaultThrottleTimeInMilliSeconds = 500;
 
   static const double height_16 = 16;
+  static const double login_image_percentage = 0.65;
+  static const double login_container_percentage = 0.40;
+
+  static const int inputTypeDefault = 36;
+  static const int inputTypeEmail = 36;
+  static const int inputTypeNumber = 10;
+  static const int inputTypePassword = 24;
+  static const int inputTypePaymentCard = 19;
+  static const int inputTypeReturn = 36;
 }

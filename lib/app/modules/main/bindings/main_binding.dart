@@ -1,10 +1,11 @@
+import 'package:flutter_getx_template/app/modules/cart/controllers/cart_controller.dart';
+import 'package:flutter_getx_template/app/modules/nearby/bindings/nearby_binding.dart';
+import 'package:flutter_getx_template/app/modules/nearby/controllers/nearby_controller.dart';
 import 'package:get/get.dart';
 
-import '/app/modules/favorite/controllers/favorite_controller.dart';
+import '../../search/controllers/search_view_controller.dart';
 import '/app/modules/home/controllers/home_controller.dart';
 import '/app/modules/main/controllers/main_controller.dart';
-import '/app/modules/other/controllers/other_controller.dart';
-import '/app/modules/settings/controllers/settings_controller.dart';
 
 class MainBinding extends Bindings {
   @override
@@ -13,19 +14,19 @@ class MainBinding extends Bindings {
       () => MainController(),
       fenix: true,
     );
-    Get.lazyPut<OtherController>(
-      () => OtherController(),
+    Get.lazyPut<SearchViewController>(
+      () => SearchViewController(),
       fenix: true,
     );
     Get.lazyPut<HomeController>(
       () => HomeController(),
       fenix: true,
     );
-    Get.lazyPut<FavoriteController>(
-      () => FavoriteController(),
+    Get.lazyPut<CartController>(
+      () => CartController(),
     );
-    Get.lazyPut<SettingsController>(
-      () => SettingsController(),
+    Get.lazyPut<NearbyController>(
+          () => NearbyController(),
     );
   }
 }

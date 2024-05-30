@@ -12,7 +12,7 @@ import '/app/core/widget/loading.dart';
 import '/flavors/build_config.dart';
 
 abstract class BaseView<Controller extends BaseController>
-    extends GetView<Controller> {
+    extends GetResponsiveView<Controller> {
   final GlobalKey<ScaffoldState> globalKey = GlobalKey<ScaffoldState>();
 
   AppLocalizations get appLocalization => AppLocalizations.of(Get.context!)!;
@@ -23,22 +23,27 @@ abstract class BaseView<Controller extends BaseController>
 
   PreferredSizeWidget? appBar(BuildContext context);
 
+
   @override
   Widget build(BuildContext context) {
+    return buildGestureDetector(context);
+  }
+
+  GestureDetector buildGestureDetector(BuildContext context) {
     return GestureDetector(
-      child: Stack(
-        children: [
-          annotatedRegion(context),
-          Obx(() => controller.pageState == PageState.LOADING
-              ? _showLoading()
-              : Container()),
-          Obx(() => controller.errorMessage.isNotEmpty
-              ? showErrorSnackBar(controller.errorMessage)
-              : Container()),
-          Container(),
-        ],
-      ),
-    );
+    child: Stack(
+      children: [
+        annotatedRegion(context),
+        Obx(() => controller.pageState == PageState.LOADING
+            ? _showLoading()
+            : Container()),
+        Obx(() => controller.errorMessage.isNotEmpty
+            ? showErrorSnackBar(controller.errorMessage)
+            : Container()),
+        Container(),
+      ],
+    ),
+  );
   }
 
   Widget annotatedRegion(BuildContext context) {

@@ -1,17 +1,17 @@
 import 'package:get/get.dart';
 
-import '/app/modules/favorite/bindings/favorite_binding.dart';
-import '/app/modules/favorite/views/favorite_view.dart';
+import '../modules/cart/bindings/cart_binding.dart';
+import '../modules/cart/views/cart_view.dart';
+import '../modules/login/bindings/login_binding.dart';
+import '../modules/login/views/login_view.dart';
+import '../modules/nearby/bindings/nearby_binding.dart';
+import '../modules/nearby/views/nearby_view.dart';
+import '../modules/search/bindings/search_binding.dart';
+import '../modules/search/views/search_view.dart';
 import '/app/modules/home/bindings/home_binding.dart';
 import '/app/modules/home/views/home_view.dart';
 import '/app/modules/main/bindings/main_binding.dart';
 import '/app/modules/main/views/main_view.dart';
-import '/app/modules/other/bindings/other_binding.dart';
-import '/app/modules/other/views/other_view.dart';
-import '/app/modules/project_details/bindings/project_details_binding.dart';
-import '/app/modules/project_details/views/project_details_view.dart';
-import '/app/modules/settings/bindings/settings_binding.dart';
-import '/app/modules/settings/views/settings_view.dart';
 
 part 'app_routes.dart';
 
@@ -32,24 +32,24 @@ class AppPages {
       binding: HomeBinding(),
     ),
     GetPage(
-      name: _Paths.FAVORITE,
-      page: () => FavoriteView(),
-      binding: FavoriteBinding(),
+      name: _Paths.LOGIN,
+      page: () => LoginView(),
+      binding: LoginBinding(),
     ),
     GetPage(
-      name: _Paths.SETTINGS,
-      page: () => SettingsView(),
-      binding: SettingsBinding(),
+      name: _Paths.SEARCH,
+      page: () => SearchView(),
+      binding: SearchBinding(),
     ),
     GetPage(
-      name: _Paths.OTHER,
-      page: () => OtherView(),
-      binding: OtherBinding(),
+      name: _Paths.CART,
+      page: () => CartView(),
+      binding: CartBinding(),
     ),
     GetPage(
-      name: _Paths.PROJECT_DETAILS,
-      page: () => ProjectDetailsView(),
-      binding: ProjectDetailsBinding(),
+      name: _Paths.NEARBY,
+      page: () =>  NearbyView(),
+      binding: NearbyBinding(),
     ),
   ];
 }

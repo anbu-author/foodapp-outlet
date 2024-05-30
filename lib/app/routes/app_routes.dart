@@ -10,6 +10,10 @@ abstract class Routes {
   static const SETTINGS = _Paths.SETTINGS;
   static const OTHER = _Paths.OTHER;
   static const PROJECT_DETAILS = _Paths.PROJECT_DETAILS;
+  static const LOGIN = _Paths.LOGIN;
+  static const SEARCH = _Paths.SEARCH;
+  static const CART = _Paths.CART;
+  static const NEARBY = _Paths.NEARBY;
 }
 
 abstract class _Paths {
@@ -19,4 +23,8 @@ abstract class _Paths {
   static const SETTINGS = '/settings';
   static const OTHER = '/other';
   static const PROJECT_DETAILS = '/project-details';
+  static const LOGIN = '/login';
+  static const SEARCH = '/search';
+  static const CART = '/cart';
+  static const NEARBY = '/nearby';
 }

@@ -1,59 +1,37 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_getx_template/app/core/base/base_view.dart';
+
 import 'package:get/get.dart';
 
+import '../../../core/values/app_values.dart';
 import '../../../core/widget/custom_image_view.dart';
-import '/app/core/base/base_view.dart';
-import '/app/core/values/app_values.dart';
-import '/app/core/widget/custom_app_bar.dart';
-import '/app/core/widget/paging_view.dart';
-import '/app/modules/home/controllers/home_controller.dart';
-import '/app/modules/home/widget/item_github_project.dart';
+import '../../../core/widget/paging_view.dart';
+import '../controllers/nearby_controller.dart';
 
-class HomeView extends BaseView<HomeController> {
-  HomeView() {
-    controller.getGithubGetxProjectList();
-  }
-
-  @override
-  PreferredSizeWidget? appBar(BuildContext context) {
-    return CustomAppBar(
-      appBarTitleText: 'GetX Templates on GitHub',
-    );
-  }
-
+class NearbyView extends BaseView<NearbyController> {
   @override
   Widget body(BuildContext context) {
     return PagingView(
       onRefresh: () async {
-        controller.onRefreshPage();
+        // controller.onRefreshPage();
       },
       onLoadNextPage: () {
-        controller.onLoadNextPage();
+        // controller.onLoadNextPage();
       },
       child: Padding(
         padding: const EdgeInsets.all(AppValues.padding),
-        child: Obx(
-          () => Column(
+        child:Column(
             children: [
               _buildStackBannerThree(),
-              ListView.separated(
-                shrinkWrap: true,
-                itemCount: controller.projectList.length,
-                primary: false,
-                physics: const NeverScrollableScrollPhysics(),
-                itemBuilder: (context, index) {
-                  var model = controller.projectList[index];
-
-                  return ItemGithubProject(dataModel: model);
-                },
-                separatorBuilder: (BuildContext context, int index) =>
-                    const SizedBox(height: AppValues.smallMargin),
-              ),
             ],
           ),
-        ),
       ),
     );
+  }
+
+  @override
+  PreferredSizeWidget? appBar(BuildContext context) {
+    return null;
   }
 
   Widget _buildStackBannerThree() {
@@ -76,7 +54,7 @@ class HomeView extends BaseView<HomeController> {
                     // Get.toNamed(AppRoutes.cartScreen);
                   },
                   child: CustomImageView(
-                    imagePath: "'images/image1.jpeg'",
+                    imagePath: "",
                     height: 216,
                     width: 216,
                     radius: BorderRadius.circular(
