@@ -13,6 +13,7 @@ abstract class Routes {
   static const LOGIN = _Paths.LOGIN;
   static const SEARCH = _Paths.SEARCH;
   static const CART = _Paths.CART;
+  static const FOOD_HOME_SCREEN = _Paths.FOOD_HOME_SCREEN;
   static const NEARBY = _Paths.NEARBY;
   static const REGISTER = _Paths.REGISTER;
 }
@@ -27,6 +28,7 @@ abstract class _Paths {
   static const LOGIN = '/login';
   static const SEARCH = '/search';
   static const CART = '/cart';
+  static const FOOD_HOME_SCREEN = '/foodHomeScreen';
   static const NEARBY = '/nearby';
   static const REGISTER = '/register';
 }
