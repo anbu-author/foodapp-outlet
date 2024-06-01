@@ -135,8 +135,8 @@ class CustomImageView extends StatelessWidget {
             imageUrl: imagePath!,
             color: color,
             placeholder: (context, url) => Container(
-              height: 30,
-              width: 30,
+              height: height,
+              width: height,
               child: LinearProgressIndicator(
                 color: Colors.grey.shade200,
                 backgroundColor: Colors.grey.shade100,

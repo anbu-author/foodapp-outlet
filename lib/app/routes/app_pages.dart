@@ -45,7 +45,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.CART,
-      page: () => CartView(),
+      page: () => CartScreen(),
       binding: CartBinding(),
     ),
     GetPage(
@@ -55,7 +55,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.REGISTER,
-      page: () => const RegisterView(),
+      page: () =>  RegisterView(),
       binding: RegisterBinding(),
     ),
   ];

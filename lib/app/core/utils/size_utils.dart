@@ -1,3 +1,4 @@
+import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 
 // These are used in the code as a reference to create your UI Responsively.
@@ -14,7 +15,6 @@ extension ResponsiveExtension on num {
   double get adaptSize {
     var height = v;
     var width = h;
-
     return height < width ? height.toDoubleValue() : width.toDoubleValue();
   }
 
@@ -47,7 +47,6 @@ class Sizer extends StatelessWidget {
     return LayoutBuilder(builder: (context, constraints) {
       return OrientationBuilder(builder: (context, orientation) {
         SizeUtils.setScreenSize(constraints, orientation);
-
         return builder(context, orientation, SizeUtils.deviceType);
       });
     });
@@ -75,9 +74,9 @@ class SizeUtils {
   static late double width;
 
   static void setScreenSize(
-    BoxConstraints constraints,
-    Orientation currentOrientation,
-  ) {
+      BoxConstraints constraints,
+      Orientation currentOrientation,
+      ) {
     boxConstraints = constraints;
     orientation = currentOrientation;
     if (orientation == Orientation.portrait) {

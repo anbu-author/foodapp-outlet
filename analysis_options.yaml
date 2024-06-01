@@ -18,9 +18,9 @@ linter:
   rules:
     camel_case_types: true
     #    prefer_double_quotes: true
-    avoid_empty_else: true
-    constant_identifier_names: false
-    use_key_in_widget_constructors: false
+#    avoid_empty_else: true
+#    constant_identifier_names: false
+#    use_key_in_widget_constructors: false
 
 dart_code_metrics:
   anti-patterns:

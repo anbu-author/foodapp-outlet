@@ -29,7 +29,7 @@ class RegisterController extends BaseController {
     await callDataService(
       registerService,
     onSuccess: (value){
-        result=value;
+        // result=value;
       //empty
       // Get.toNamed("page");
     }
