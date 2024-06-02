@@ -1,4 +1,6 @@
 import 'package:flutter_getx_template/app/modules/food_home_screen/views/food_home_screen.dart';
+import 'package:flutter_getx_template/app/modules/sign_up/bindings/sign_up_bindings.dart';
+import 'package:flutter_getx_template/app/modules/sign_up/views/sign_up_screen.dart';
 import 'package:get/get.dart';
 
 import '../modules/cart/bindings/cart_binding.dart';
@@ -14,6 +16,8 @@ import '../modules/restaurant_item_added_screen/binding/restaurant_item_added_bi
 import '../modules/restaurant_item_added_screen/restaurant_item_added_screen.dart';
 import '../modules/search/bindings/search_binding.dart';
 import '../modules/search/views/search_view.dart';
+import '../modules/sign_in/bindings/sign_in_binding.dart';
+import '../modules/sign_in/views/sign_in_screen.dart';
 import '/app/modules/home/bindings/home_binding.dart';
 import '/app/modules/home/views/home_view.dart';
 import '/app/modules/main/bindings/main_binding.dart';
@@ -26,6 +30,9 @@ class AppPages {
 
   static const INITIAL = Routes.MAIN;
 
+  static const String splash = '/splash';
+  static const String signInScreen = '/signInScreen';
+  static const String signUpScreen = '/SignUpScreen';
   static const String initialRoute = '/initialRoute';
   static const String cartScreen = '/cart_screen';
   static const String restaurantItemAddedScreen = '/restaurant_item_added_screen';
@@ -33,9 +40,24 @@ class AppPages {
 
   static final routes = [
     GetPage(
+      name: splash,
+      page: ()=> SignInScreen(),
+      binding: SignInBinding(),
+    ),
+    GetPage(
       name: _Paths.MAIN,
-      page: () => MainView(),
-      binding: MainBinding(),
+      page: () => SignInScreen(),
+      binding: SignInBinding(),
+    ),
+    GetPage(
+      name:_Paths.SignInScreen,
+      page: ()=> SignInScreen(),
+      bindings: [SignInBinding(),]
+    ),
+    GetPage(
+        name:_Paths.SignUpScreen,
+        page: ()=> SignUpScreen(),
+        bindings: [SignUpBindings(),]
     ),
     GetPage(
       name: _Paths.HOME,

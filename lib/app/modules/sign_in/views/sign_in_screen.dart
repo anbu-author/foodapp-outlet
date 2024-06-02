@@ -7,6 +7,7 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../../core/base/base_view.dart';
+import '../../../routes/app_pages.dart';
 import '../../bottom_navigation/views/bottom_navigation.dart';
 import '../../sign_up/views/sign_up_screen.dart';
 import '../controllet/sign_in_controller.dart';
@@ -182,7 +183,7 @@ class SignInScreen extends BaseView<SignInController> {
                                   )),
                               onPressed: () {
                                 if (controller.myKey.currentState!.validate()) {
-                                  Get.to(BotNaviBar());
+                                  controller.signInApi();
                                 }
                               },
                               child: Text(
@@ -209,7 +210,7 @@ class SignInScreen extends BaseView<SignInController> {
                             ),
                             TextButton(
                               onPressed: () {
-                                Get.to(() => SignUpScreen());
+                                Get.to(()=>SignUpScreen());
                               },
                               child: Text(
                                 "Sign up",
