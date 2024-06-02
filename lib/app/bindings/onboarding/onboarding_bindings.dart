@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
-import '../data/repository/onboarding/onboarding_repository.dart';
-import '../data/repository/onboarding/onboarding_repository_impl.dart';
+import '../../data/repository/onboarding/onboarding_repository.dart';
+import '../../data/repository/onboarding/onboarding_repository_impl.dart';
 import '/app/data/repository/github_repository.dart';
 import '/app/data/repository/github_repository_impl.dart';
 
