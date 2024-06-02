@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import '../../../core/values/app_values.dart';
 import '../../../core/widget/custom_image_view.dart';
 import '../../../core/widget/paging_view.dart';
+import '../../../routes/app_pages.dart';
 import '../controllers/nearby_controller.dart';
 
 class NearbyView extends BaseView<NearbyController> {
@@ -51,7 +52,7 @@ class NearbyView extends BaseView<NearbyController> {
               itemBuilder: (context, index) {
                 return InkWell(
                   onTap: () {
-                    // Get.toNamed(AppRoutes.cartScreen);
+                    Get.toNamed(AppPages.cartScreen);
                   },
                   child: CustomImageView(
                     imagePath: "",

@@ -1,3 +1,4 @@
+import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_getx_template/app/core/utils/size_utils.dart';
 import 'package:get/get.dart';

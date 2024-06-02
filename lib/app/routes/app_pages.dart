@@ -1,4 +1,4 @@
-import 'package:flutter_getx_template/app/modules/food_home_screen/food_home_screen.dart';
+import 'package:flutter_getx_template/app/modules/food_home_screen/views/food_home_screen.dart';
 import 'package:get/get.dart';
 
 import '../modules/cart/bindings/cart_binding.dart';
@@ -28,8 +28,7 @@ class AppPages {
 
   static const String initialRoute = '/initialRoute';
   static const String cartScreen = '/cart_screen';
-  static const String restaurantItemAddedScreen =
-      '/restaurant_item_added_screen';
+  static const String restaurantItemAddedScreen = '/restaurant_item_added_screen';
 
 
   static final routes = [

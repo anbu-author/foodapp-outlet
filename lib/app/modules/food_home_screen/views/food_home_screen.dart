@@ -3,22 +3,22 @@ import 'package:flutter_getx_template/app/core/utils/size_utils.dart';
 import 'package:flutter_getx_template/app/modules/food_home_screen/views/widgets/listclock_item_widget.dart';
 import 'package:flutter_getx_template/app/modules/food_home_screen/views/widgets/restaurantcard_item_widget.dart';
 import 'package:get/get.dart';
-import '../../../widget/app_bar/appbar_leading_image.dart';
-import '../../../widget/app_bar/appbar_subtitle.dart';
-import '../../../widget/app_bar/appbar_title.dart';
-import '../../../widget/app_bar/appbar_trailing_image.dart';
-import '../../../widget/app_bar/custom_app_bar.dart';
-import '../../../widget/custom_outlined_button.dart';
-import '../../core/base/base_view.dart';
-import '../../core/utils/image_constant.dart';
-import '../../core/widget/custom_image_view.dart';
-import '../../routes/app_pages.dart';
-import '../../routes/theme/custom_button_style.dart';
-import '../../routes/theme/custom_text_style.dart';
-import '../../routes/theme/theme_helper.dart';
-import 'controller/food_home_controller.dart';
-import 'models/listclock_item_model.dart';
-import 'models/restaurantcard_item_model.dart';
+import '../../../../widget/app_bar/appbar_leading_image.dart';
+import '../../../../widget/app_bar/appbar_subtitle.dart';
+import '../../../../widget/app_bar/appbar_title.dart';
+import '../../../../widget/app_bar/appbar_trailing_image.dart';
+import '../../../../widget/app_bar/custom_app_bar.dart';
+import '../../../../widget/custom_outlined_button.dart';
+import '../../../core/base/base_view.dart';
+import '../../../core/utils/image_constant.dart';
+import '../../../core/widget/custom_image_view.dart';
+import '../../../routes/app_pages.dart';
+import '../../../routes/theme/custom_button_style.dart';
+import '../../../routes/theme/custom_text_style.dart';
+import '../../../routes/theme/theme_helper.dart';
+import '../controller/food_home_controller.dart';
+import '../models/listclock_item_model.dart';
+import '../models/restaurantcard_item_model.dart';
 
 class FoodHomeScreen extends BaseView<FoodHomeController> {
 

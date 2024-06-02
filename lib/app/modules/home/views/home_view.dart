@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_getx_template/app/modules/home/views/widget/item_github_project.dart';
 import 'package:get/get.dart';
-
 import '../../../core/widget/custom_image_view.dart';
+import '../../../routes/app_pages.dart';
 import '/app/core/base/base_view.dart';
 import '/app/core/values/app_values.dart';
 import '/app/core/widget/custom_app_bar.dart';
 import '/app/core/widget/paging_view.dart';
 import '/app/modules/home/controllers/home_controller.dart';
-import '/app/modules/home/widget/item_github_project.dart';
 
 class HomeView extends BaseView<HomeController> {
   HomeView() {
@@ -73,7 +73,7 @@ class HomeView extends BaseView<HomeController> {
               itemBuilder: (context, index) {
                 return InkWell(
                   onTap: () {
-                    // Get.toNamed(AppRoutes.cartScreen);
+                    Get.toNamed(AppPages.cartScreen);
                   },
                   child: CustomImageView(
                     imagePath: "'images/image1.jpeg'",
