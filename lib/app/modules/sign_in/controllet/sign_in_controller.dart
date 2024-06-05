@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_getx_template/app/routes/app_pages.dart';
 import 'package:get/get.dart';
 
 import '../../../core/base/base_controller.dart';
@@ -62,7 +63,7 @@ class SignInController extends BaseController {
     await callDataService(
       data,
       onSuccess: (value) {
-        Get.to(BotNaviBar());
+        Get.toNamed(Routes.NEARBY);
       },
     );
   }

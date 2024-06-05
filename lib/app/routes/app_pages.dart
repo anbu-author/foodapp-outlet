@@ -36,6 +36,7 @@ class AppPages {
   static const String initialRoute = '/initialRoute';
   static const String cartScreen = '/cart_screen';
   static const String restaurantItemAddedScreen = '/restaurant_item_added_screen';
+  static const String nearBy = '/nearBy';
 
 
   static final routes = [
