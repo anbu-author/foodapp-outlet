@@ -3,36 +3,24 @@ part of 'app_pages.dart';
 
 abstract class Routes {
   Routes._();
-
-  static const MAIN = _Paths.MAIN;
-  static const SignInScreen = _Paths.SignInScreen;
+  static const SignInScreen = _Paths.SignIn;
   static const SignUpScreen = _Paths.SignUpScreen;
-  static const HOME = _Paths.HOME;
-  static const FAVORITE = _Paths.FAVORITE;
-  static const SETTINGS = _Paths.SETTINGS;
-  static const OTHER = _Paths.OTHER;
-  static const PROJECT_DETAILS = _Paths.PROJECT_DETAILS;
-  static const LOGIN = _Paths.LOGIN;
-  static const SEARCH = _Paths.SEARCH;
-  static const CART = _Paths.CART;
-  static const FOOD_HOME_SCREEN = _Paths.FOOD_HOME_SCREEN;
-  static const NEARBY = _Paths.NEARBY;
-  static const REGISTER = _Paths.REGISTER;
+  static const DashboardScreen = _Paths.DashboardScreen;
+  static const Screen2 = _Paths.Screen2;
+  static const DishList = _Paths.DishList;
+  static const OngoingOrders = _Paths.OngoingOrders;
+  static const CouponList = _Paths.CouponList;
+  static const NewCat = _Paths.NewCat;
 }
 
 abstract class _Paths {
-  static const MAIN = '/main';
-  static const SignInScreen = '/signInScreen';
+  static const SignIn = '/SignIn';
   static const SignUpScreen = '/signUpScreen';
-  static const HOME = '/home';
-  static const FAVORITE = '/favorite';
-  static const SETTINGS = '/settings';
-  static const OTHER = '/other';
-  static const PROJECT_DETAILS = '/project-details';
-  static const LOGIN = '/login';
-  static const SEARCH = '/search';
-  static const CART = '/cart';
-  static const FOOD_HOME_SCREEN = '/foodHomeScreen';
-  static const NEARBY = '/nearby';
-  static const REGISTER = '/register';
+  static const DashboardScreen = '/dashboardScreen';
+  static const Screen2 = '/Screen2';
+  static const CustomGroup = '/CustomGroup';
+  static const DishList = '/DishesList';
+  static const OngoingOrders = '/OngoingOrders';
+  static const CouponList = '/CouponList';
+  static const NewCat = '/NewCat';
 }
