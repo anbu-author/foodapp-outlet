@@ -7,6 +7,7 @@ import '/app/core/values/app_colors.dart';
 import '/app/routes/app_pages.dart';
 import '/flavors/build_config.dart';
 import '/flavors/env_config.dart';
+import 'core/utils/size_utils.dart';
 
 class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -20,29 +21,32 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-      title: _envConfig.appName,
-      initialRoute: AppPages.INITIAL,
-      initialBinding: InitialBinding(),
-      getPages: AppPages.routes,
-      localizationsDelegates: AppLocalizations.localizationsDelegates,
-      supportedLocales: _getSupportedLocal(),
-      theme: ThemeData(
-        primarySwatch: AppColors.colorPrimarySwatch,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-        brightness: Brightness.light,
-        primaryColor: AppColors.colorPrimary,
-        textTheme: const TextTheme(
-          labelLarge: TextStyle(
-            color: Colors.white,
-            fontSize: 20.0,
-            fontWeight: FontWeight.bold,
+    return Sizer(builder: (_, __, ___) {
+      return GetMaterialApp(
+        title: _envConfig.appName,
+        initialRoute: AppPages.SignIn,
+        initialBinding: InitialBinding(),
+        getPages: AppPages.routes,
+        localizationsDelegates: AppLocalizations.localizationsDelegates,
+        supportedLocales: _getSupportedLocal(),
+        theme: ThemeData(
+          primarySwatch: AppColors.colorPrimarySwatch,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+          brightness: Brightness.light,
+          primaryColor: AppColors.colorPrimary,
+          textTheme: const TextTheme(
+            labelLarge: TextStyle(
+              color: Colors.white,
+              fontSize: 20.0,
+              fontWeight: FontWeight.bold,
+            ),
           ),
+          fontFamily: 'Roboto',
         ),
-        fontFamily: 'Roboto',
-      ),
-      debugShowCheckedModeBanner: false,
-    );
+        debugShowCheckedModeBanner: false,
+      );
+      ;
+    });
   }
 
   List<Locale> _getSupportedLocal() {

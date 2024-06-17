@@ -1,109 +1,93 @@
-import 'package:flutter_getx_template/app/modules/food_home_screen/views/food_home_screen.dart';
 import 'package:flutter_getx_template/app/modules/sign_up/bindings/sign_up_bindings.dart';
 import 'package:flutter_getx_template/app/modules/sign_up/views/sign_up_screen.dart';
 import 'package:get/get.dart';
 
-import '../modules/cart/bindings/cart_binding.dart';
-import '../modules/cart/views/cart_view.dart';
-import '../modules/food_home_screen/binding/food_home_binding.dart';
-import '../modules/login/bindings/login_binding.dart';
-import '../modules/login/views/login_view.dart';
-import '../modules/nearby/bindings/nearby_binding.dart';
-import '../modules/nearby/views/nearby_view.dart';
-import '../modules/register/bindings/register_binding.dart';
-import '../modules/register/views/register_view.dart';
-import '../modules/restaurant_item_added_screen/binding/restaurant_item_added_binding.dart';
-import '../modules/restaurant_item_added_screen/restaurant_item_added_screen.dart';
-import '../modules/search/bindings/search_binding.dart';
-import '../modules/search/views/search_view.dart';
+import '../modules/screen_01 - Dashboard/bindings/dashboard_bindings.dart';
+import '../modules/screen_02 - category/bindings/category_bindings.dart';
+import '../modules/screen_03 - custompage/bindings/custompage_bindings.dart';
+import '../modules/screen_04 - dishlist/bindings/dishlist_bindings.dart';
+import '../modules/screen_05 - orders/bindings/orders_bindings.dart';
+import '../modules/screen_06 - coupons/bindings/coupons_bindings.dart';
 import '../modules/sign_in/bindings/sign_in_binding.dart';
 import '../modules/sign_in/views/sign_in_screen.dart';
-import '/app/modules/home/bindings/home_binding.dart';
-import '/app/modules/home/views/home_view.dart';
-import '/app/modules/main/bindings/main_binding.dart';
-import '/app/modules/main/views/main_view.dart';
+import 'main_screen.dart';
 
 part 'app_routes.dart';
 
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.MAIN;
-
-  static const String splash = '/splash';
-  static const String signInScreen = '/signInScreen';
+  static const String initialroute = '/initialroute';
+  static const String SignIn = '/SignIn';
   static const String signUpScreen = '/SignUpScreen';
-  static const String initialRoute = '/initialRoute';
-  static const String cartScreen = '/cart_screen';
-  static const String restaurantItemAddedScreen = '/restaurant_item_added_screen';
-  static const String nearBy = '/nearBy';
-
+  static const String DashBoardScreen = '/dashboardscreen';
+  static const String screen2 = '/screen2';
+  static const String customgroup = '/customgroup';
+  static const String dishlist = '/dishlist';
+  static const String ongoingorders = '/ongoingorders';
+  static const String couponlist = '/couponlist';
+  static const String newcat = '/newcat';
 
   static final routes = [
     GetPage(
-      name: splash,
-      page: ()=> SignInScreen(),
-      binding: SignInBinding(),
-    ),
-    GetPage(
-      name: _Paths.MAIN,
+      name: _Paths.SignIn,
       page: () => SignInScreen(),
-      binding: SignInBinding(),
+      bindings: [
+        SignInBinding(),
+      ],
     ),
     GetPage(
-      name:_Paths.SignInScreen,
-      page: ()=> SignInScreen(),
-      bindings: [SignInBinding(),]
+      name: _Paths.SignUpScreen,
+      page: () => SignUpScreen(),
+      bindings: [
+        SignUpBindings(),
+      ],
     ),
     GetPage(
-        name:_Paths.SignUpScreen,
-        page: ()=> SignUpScreen(),
-        bindings: [SignUpBindings(),]
+      name: _Paths.DashboardScreen,
+      page: () => MainScreen(1),
+      bindings: [
+        DashboardBinding(),
+      ],
     ),
     GetPage(
-      name: _Paths.HOME,
-      page: () => HomeView(),
-      binding: HomeBinding(),
+      name: _Paths.Screen2,
+      page: () => MainScreen(2),
+      bindings: [
+        CategoryBindings(),
+      ],
     ),
     GetPage(
-      name: _Paths.LOGIN,
-      page: () => LoginView(),
-      binding: LoginBinding(),
+      name: _Paths.CustomGroup,
+      page: () => MainScreen(3),
+      bindings: [
+        CustompageBindings(),
+      ],
     ),
     GetPage(
-      name: _Paths.SEARCH,
-      page: () => SearchView(),
-      binding: SearchBinding(),
+      name: _Paths.DishList,
+      page: () => MainScreen(4),
+      bindings: [
+        DishListBinding(),
+      ],
     ),
     GetPage(
-      name: _Paths.CART,
-      page: () => CartScreen(),
-      binding: CartBinding(),
+      name: _Paths.OngoingOrders,
+      page: () => MainScreen(5),
+      bindings: [
+        OrdersBindings(),
+      ],
     ),
     GetPage(
-      name: _Paths.FOOD_HOME_SCREEN,
-      page: ()=> FoodHomeScreen(),
-      binding: FoodHomeBinding()
+      name: _Paths.CouponList,
+      page: () => MainScreen(6),
+      bindings: [
+        CouponsBindings(),
+      ],
     ),
     GetPage(
-      name: cartScreen,
-      page: () => CartScreen(),
-      bindings: [CartBinding()],
-    ),
-    GetPage(
-      name: restaurantItemAddedScreen,
-      page: () => RestaurantItemAddedScreen(),
-      bindings: [RestaurantItemAddedBinding()],
-    ),
-    GetPage(
-      name: _Paths.NEARBY,
-      page: () => NearbyView(),
-      binding: NearbyBinding(),
-    ),
-    GetPage(
-      name: _Paths.REGISTER,
-      page: () =>  RegisterView(),
-      binding: RegisterBinding(),
+      name: _Paths.NewCat,
+      page: () => MainScreen(7),
     ),
   ];
 }

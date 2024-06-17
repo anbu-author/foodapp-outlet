@@ -1,17 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-
-import 'package:flutter/src/widgets/preferred_size.dart';
-import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../../core/base/base_view.dart';
-import '../../../routes/app_pages.dart';
-import '../../bottom_navigation/views/bottom_navigation.dart';
-import '../../sign_up/views/sign_up_screen.dart';
-import '../controllet/sign_in_controller.dart';
-import 'enter_email_screen.dart';
+import '../controller/sign_in_controller.dart';
 
 class SignInScreen extends BaseView<SignInController> {
   @override
@@ -19,213 +11,187 @@ class SignInScreen extends BaseView<SignInController> {
     return null;
   }
 
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
   @override
   Widget body(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: SingleChildScrollView(
-          child: Form(
-            key: controller.myKey,
-            child: Stack(
-              children: [
-                Container(
-                  height: 450,
-                  width: double.infinity,
-                  decoration: BoxDecoration(color: Colors.white),
-                  child: Image(
-                    fit: BoxFit.cover,
-                    image: AssetImage('assets/images/m-images/image1.jpeg'),
-                  ),
+        backgroundColor: Color(0xff00BCD4),
+        body: Form(
+          key: controller.myKey,
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(top: 90, bottom: 0),
+                child: Text(
+                  'Godeliver Admin',
+                  style: GoogleFonts.familjenGrotesk(
+                      fontSize: 35,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                      height: 0.9),
                 ),
-                IconButton(
-                  iconSize: 30,
-                  onPressed: () {},
-                  icon: Icon(
-                    Icons.arrow_back,
-                    color: Colors.black,
-                  ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 0, bottom: 30),
+                child: Text(
+                  'we serve the world',
+                  style: GoogleFonts.familjenGrotesk(
+                      fontSize: 15, color: Colors.white),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 400),
-                  child: Container(
-                    // height: double.infinity,
-                    // width: double.infinity,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(25),
-                          topRight: Radius.circular(25),
+              ),
+              Center(
+                child: Container(
+                  height: MediaQuery.of(context).size.height * 0.4,
+                  width: MediaQuery.of(context).size.width * 0.3,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
+                      color: Colors.white),
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(top: 15, bottom: 20),
+                        child: Text(
+                          'Sign in to start your session',
+                          style: GoogleFonts.familjenGrotesk(
+                              fontSize: 15, color: Colors.white),
                         ),
-                        color: Colors.white),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(top: 50, left: 30),
-                          child: Text(
-                            'Login to your account',
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 20,
-                                color: Colors.black),
+                      ),
+                      Row(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(
+                                top: 16, left: 20, right: 10),
+                            child: SvgPicture.asset(
+                              'images/person-svgrepo-com.svg',
+                              height: 18,
+                              width: 18,
+                            ),
                           ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(
-                              left: 20, right: 20, top: 40),
-                          child: TextFormField(
-                            controller: controller.emailController,
-                            validator: (value) {
-                              if (value!.isEmpty) {
-                                return 'Please enter a your email';
-                              } else if (!controller.emailRegex
-                                  .hasMatch(value)) {
-                                return 'please enter valid email';
-                              } else {
-                                return null;
-                              }
-                            },
-                            onChanged: controller.setEmail,
-                            cursorColor: Colors.black,
-                            decoration: InputDecoration(
-                              contentPadding: EdgeInsets.symmetric(
-                                  vertical: 10, horizontal: 20),
-                              fillColor: Colors.black12.withOpacity(0.1),
-                              filled: true,
-                              labelText: 'Email',
-                              labelStyle: TextStyle(
-                                  color: Colors.black.withOpacity(0.5),
-                                  fontSize: 15),
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(30),
-                              ),
-                              enabledBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(30),
-                                  borderSide: BorderSide.none),
-                              focusedBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(30),
-                                borderSide: BorderSide(
-                                  color: Colors.black.withOpacity(0.1),
+                          Expanded(
+                            child: SizedBox(
+                              height: 38,
+                              child: Padding(
+                                padding: const EdgeInsets.only(right: 30),
+                                child: TextFormField(
+                                  controller: controller.emailController,
+                                  onChanged: controller.setEmail,
+                                  cursorColor: Colors.black,
+                                  cursorHeight: 18,
+                                  decoration: InputDecoration(
+                                    hintText: 'E-Mail',
+                                    hintStyle: GoogleFonts.familjenGrotesk(
+                                        textStyle: TextStyle(
+                                            fontSize: 14, color: Colors.grey)),
+                                    contentPadding: EdgeInsets.symmetric(
+                                        vertical: 2.0, horizontal: 0),
+                                    enabledBorder: UnderlineInputBorder(
+                                      borderSide: BorderSide(
+                                          color: Colors.black, width: 0.1),
+                                    ),
+                                    focusedBorder: UnderlineInputBorder(
+                                      borderSide: BorderSide(
+                                          color: Colors.black, width: 0.1),
+                                    ),
+                                  ),
                                 ),
                               ),
                             ),
+                          )
+                        ],
+                      ),
+                      SizedBox(
+                        height: 30,
+                      ),
+                      Row(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(
+                                top: 16, left: 20, right: 10),
+                            child: SvgPicture.asset(
+                              'images/lock-svgrepo-com.svg',
+                              height: 18,
+                              width: 18,
+                            ),
                           ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(
-                              left: 20, right: 20, top: 10),
-                          child: TextFormField(
-                            validator: (value) {
-                              if (value!.isEmpty) {
-                                return 'Please enter a your password';
-                              } else {
-                                return null;
-                              }
-                            },
-                            controller: controller.passwordController,
-                            obscureText: true,
-                            onChanged: controller.setPassword,
-                            cursorColor: Colors.black,
-                            decoration: InputDecoration(
-                              contentPadding: EdgeInsets.symmetric(
-                                  vertical: 10, horizontal: 20),
-                              fillColor: Colors.black12.withOpacity(0.1),
-                              filled: true,
-                              labelText: 'Password',
-                              labelStyle: TextStyle(
-                                  color: Colors.black.withOpacity(0.5),
-                                  fontSize: 15),
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(30),
-                              ),
-                              enabledBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(30),
-                                  borderSide: BorderSide.none),
-                              focusedBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(30),
-                                borderSide: BorderSide(
-                                  color: Colors.black.withOpacity(0.1),
+                          Expanded(
+                            child: SizedBox(
+                              height: 38,
+                              child: Padding(
+                                padding: const EdgeInsets.only(right: 30),
+                                child: TextFormField(
+                                  controller: controller.passwordController,
+                                  onChanged: controller.setPassword,
+                                  cursorColor: Colors.black,
+                                  cursorHeight: 18,
+                                  decoration: InputDecoration(
+                                    hintText: 'Password',
+                                    hintStyle: GoogleFonts.familjenGrotesk(
+                                        textStyle: TextStyle(
+                                            fontSize: 14, color: Colors.grey)),
+                                    contentPadding: EdgeInsets.symmetric(
+                                        vertical: 2.0, horizontal: 0),
+                                    enabledBorder: UnderlineInputBorder(
+                                      borderSide: BorderSide(
+                                          color: Colors.black, width: 0.1),
+                                    ),
+                                    focusedBorder: UnderlineInputBorder(
+                                      borderSide: BorderSide(
+                                          color: Colors.black, width: 0.1),
+                                    ),
+                                  ),
                                 ),
                               ),
                             ),
-                          ),
-                        ),
-                        SizedBox(height: 20),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
+                          )
+                        ],
+                      ),
+                      SizedBox(height: 20),
+                      Padding(
+                        padding: const EdgeInsets.all(12.0),
+                        child: Row(
                           children: [
-                            TextButton(
-                              onPressed: () {
-                                Get.to(() => EnterEmailScreen());
-                              },
-                              child: Text(
-                                'Forget Your Password?',
-                                style: GoogleFonts.openSans(
-                                  textStyle: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                              ),
+                            Checkbox(
+                              value: false,
+                              activeColor: Colors.blue,
+                              onChanged: (bool? value) {},
                             ),
-                          ],
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(
-                              left: 20, right: 20, top: 30),
-                          child: SizedBox(
-                            height: 45,
-                            width: double.infinity,
-                            child: ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                  backgroundColor: Color(0xff5fd040),
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(30),
-                                  )),
-                              onPressed: () {
-                                if (controller.myKey.currentState!.validate()) {
-                                  controller.signInApi();
-                                }
-                              },
-                              child: Text(
-                                'Login',
-                                style: TextStyle(
-                                    fontFamily: "Inter",
-                                    color: Colors.black,
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          height: 40,
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
                             Text(
-                              "Don't have an account?",
-                              style:
-                                  TextStyle(color: Colors.black, fontSize: 14),
+                              'Remember Me',
+                              style: GoogleFonts.familjenGrotesk(fontSize: 14),
                             ),
-                            TextButton(
-                              onPressed: () {
-                                Get.to(()=>SignUpScreen());
-                              },
-                              child: Text(
-                                "Sign up",
-                                style:
-                                    TextStyle(color: Colors.red, fontSize: 14),
+                            Spacer(),
+                            SizedBox(
+                              width: 120,
+                              height: 30,
+                              child: MaterialButton(
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(2)),
+                                elevation: 5,
+                                color: Color(0xffE91E63),
+                                onPressed: () {
+                                  if (controller.myKey.currentState!
+                                      .validate()) {
+                                    controller.signInApi();
+                                  }
+                                },
+                                child: Text(
+                                  'SIGN IN',
+                                  style: GoogleFonts.familjenGrotesk(
+                                      textStyle: TextStyle(
+                                          fontSize: 14, color: Colors.white)),
+                                ),
                               ),
-                            )
+                            ),
                           ],
-                        )
-                      ],
-                    ),
+                        ),
+                      )
+                    ],
                   ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),

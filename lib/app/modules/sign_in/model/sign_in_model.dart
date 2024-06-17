@@ -1,142 +1,141 @@
 class SignInModel {
-  final bool? status;
-  final int? code;
-  final String? message;
-  final Data? data;
-  final Tokens? tokens;
+  bool? status;
+  int? code;
+  String? message;
+  Data? data;
+  Tokens? tokens;
 
-  SignInModel({
-    this.status,
-    this.code,
-    this.message,
-    this.data,
-    this.tokens,
-  });
+  SignInModel({this.status, this.code, this.message, this.data, this.tokens});
 
-  SignInModel.fromJson(Map<String, dynamic> json)
-      : status = json['status'] as bool?,
-        code = json['code'] as int?,
-        message = json['message'] as String?,
-        data = (json['data'] as Map<String,dynamic>?) != null ? Data.fromJson(json['data'] as Map<String,dynamic>) : null,
-        tokens = (json['tokens'] as Map<String,dynamic>?) != null ? Tokens.fromJson(json['tokens'] as Map<String,dynamic>) : null;
+  SignInModel.fromJson(Map<String, dynamic> json) {
+    status = json['status'];
+    code = json['code'];
+    message = json['message'];
+    data = json['data'] != null ? new Data.fromJson(json['data']) : null;
+    tokens =
+        json['tokens'] != null ? new Tokens.fromJson(json['tokens']) : null;
+  }
 
-  Map<String, dynamic> toJson() => {
-    'status' : status,
-    'code' : code,
-    'message' : message,
-    'data' : data?.toJson(),
-    'tokens' : tokens?.toJson()
-  };
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['status'] = this.status;
+    data['code'] = this.code;
+    data['message'] = this.message;
+    if (this.data != null) {
+      data['data'] = this.data!.toJson();
+    }
+    if (this.tokens != null) {
+      data['tokens'] = this.tokens!.toJson();
+    }
+    return data;
+  }
 }
 
 class Data {
-  final int? id;
-  final String? uuid;
-  final String? firstName;
-  final String? lastName;
-  final String? email;
-  final int? status;
-  final int? emailVerified;
-  final dynamic address;
-  final dynamic phoneNumber;
-  final String? createdAt;
-  final String? updatedAt;
+  int? id;
+  String? uuid;
+  int? restaurantId;
+  String? outletLocality;
+  String? outletArea;
+  String? outletMobile;
+  String? outletEmail;
+  String? outletLat;
+  String? outletLng;
+  String? outletRating;
+  bool? status;
+  String? createdAt;
+  String? updatedAt;
 
-  Data({
-    this.id,
-    this.uuid,
-    this.firstName,
-    this.lastName,
-    this.email,
-    this.status,
-    this.emailVerified,
-    this.address,
-    this.phoneNumber,
-    this.createdAt,
-    this.updatedAt,
-  });
+  Data(
+      {this.id,
+      this.uuid,
+      this.restaurantId,
+      this.outletLocality,
+      this.outletArea,
+      this.outletMobile,
+      this.outletEmail,
+      this.outletLat,
+      this.outletLng,
+      this.outletRating,
+      this.status,
+      this.createdAt,
+      this.updatedAt});
 
-  Data.fromJson(Map<String, dynamic> json)
-      : id = json['id'] as int?,
-        uuid = json['uuid'] as String?,
-        firstName = json['first_name'] as String?,
-        lastName = json['last_name'] as String?,
-        email = json['email'] as String?,
-        status = json['status'] as int?,
-        emailVerified = json['email_verified'] as int?,
-        address = json['address'],
-        phoneNumber = json['phone_number'],
-        createdAt = json['createdAt'] as String?,
-        updatedAt = json['updatedAt'] as String?;
+  Data.fromJson(Map<String, dynamic> json) {
+    id = json['id'];
+    uuid = json['uuid'];
+    restaurantId = json['restaurant_id'];
+    outletLocality = json['outlet_locality'];
+    outletArea = json['outlet_area'];
+    outletMobile = json['outlet_mobile'];
+    outletEmail = json['outlet_email'];
+    outletLat = json['outlet_lat'];
+    outletLng = json['outlet_lng'];
+    outletRating = json['outlet_rating'];
+    status = json['status'];
+    createdAt = json['createdAt'];
+    updatedAt = json['updatedAt'];
+  }
 
-  Map<String, dynamic> toJson() => {
-    'id' : id,
-    'uuid' : uuid,
-    'first_name' : firstName,
-    'last_name' : lastName,
-    'email' : email,
-    'status' : status,
-    'email_verified' : emailVerified,
-    'address' : address,
-    'phone_number' : phoneNumber,
-    'createdAt' : createdAt,
-    'updatedAt' : updatedAt
-  };
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['id'] = this.id;
+    data['uuid'] = this.uuid;
+    data['restaurant_id'] = this.restaurantId;
+    data['outlet_locality'] = this.outletLocality;
+    data['outlet_area'] = this.outletArea;
+    data['outlet_mobile'] = this.outletMobile;
+    data['outlet_email'] = this.outletEmail;
+    data['outlet_lat'] = this.outletLat;
+    data['outlet_lng'] = this.outletLng;
+    data['outlet_rating'] = this.outletRating;
+    data['status'] = this.status;
+    data['createdAt'] = this.createdAt;
+    data['updatedAt'] = this.updatedAt;
+    return data;
+  }
 }
 
 class Tokens {
-  final Access? access;
-  final Refresh? refresh;
+  Access? access;
+  Access? refresh;
 
-  Tokens({
-    this.access,
-    this.refresh,
-  });
+  Tokens({this.access, this.refresh});
 
-  Tokens.fromJson(Map<String, dynamic> json)
-      : access = (json['access'] as Map<String,dynamic>?) != null ? Access.fromJson(json['access'] as Map<String,dynamic>) : null,
-        refresh = (json['refresh'] as Map<String,dynamic>?) != null ? Refresh.fromJson(json['refresh'] as Map<String,dynamic>) : null;
+  Tokens.fromJson(Map<String, dynamic> json) {
+    access =
+        json['access'] != null ? new Access.fromJson(json['access']) : null;
+    refresh =
+        json['refresh'] != null ? new Access.fromJson(json['refresh']) : null;
+  }
 
-  Map<String, dynamic> toJson() => {
-    'access' : access?.toJson(),
-    'refresh' : refresh?.toJson()
-  };
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    if (this.access != null) {
+      data['access'] = this.access!.toJson();
+    }
+    if (this.refresh != null) {
+      data['refresh'] = this.refresh!.toJson();
+    }
+    return data;
+  }
 }
 
 class Access {
-  final String? token;
-  final String? expires;
+  String? token;
+  String? expires;
 
-  Access({
-    this.token,
-    this.expires,
-  });
+  Access({this.token, this.expires});
 
-  Access.fromJson(Map<String, dynamic> json)
-      : token = json['token'] as String?,
-        expires = json['expires'] as String?;
+  Access.fromJson(Map<String, dynamic> json) {
+    token = json['token'];
+    expires = json['expires'];
+  }
 
-  Map<String, dynamic> toJson() => {
-    'token' : token,
-    'expires' : expires
-  };
-}
-
-class Refresh {
-  final String? token;
-  final String? expires;
-
-  Refresh({
-    this.token,
-    this.expires,
-  });
-
-  Refresh.fromJson(Map<String, dynamic> json)
-      : token = json['token'] as String?,
-        expires = json['expires'] as String?;
-
-  Map<String, dynamic> toJson() => {
-    'token' : token,
-    'expires' : expires
-  };
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['token'] = this.token;
+    data['expires'] = this.expires;
+    return data;
+  }
 }
