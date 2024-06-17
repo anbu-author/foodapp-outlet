@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../../core/base/base_view.dart';
-import '../../../routes/app_pages.dart';
 import '../controller/category_controller.dart';
 
 class Screen2 extends BaseView<CategoryController> {
@@ -78,9 +76,7 @@ class Screen2 extends BaseView<CategoryController> {
                             height: 25,
                             child: MaterialButton(
                               color: Colors.blue,
-                              onPressed: () {
-                                Get.toNamed(AppPages.newcat);
-                              },
+                              onPressed: () {},
                               child: Text(
                                 'New Category',
                                 style: GoogleFonts.k2d(

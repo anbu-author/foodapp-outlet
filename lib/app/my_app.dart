@@ -24,7 +24,7 @@ class _MyAppState extends State<MyApp> {
     return Sizer(builder: (_, __, ___) {
       return GetMaterialApp(
         title: _envConfig.appName,
-        initialRoute: AppPages.SignIn,
+        initialRoute: AppPages.INITIAL,
         initialBinding: InitialBinding(),
         getPages: AppPages.routes,
         localizationsDelegates: AppLocalizations.localizationsDelegates,

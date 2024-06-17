@@ -61,7 +61,7 @@ class SideMenu extends StatelessWidget {
                 title: 'Dashboard',
                 svgSrc: 'images/dashboard-svgrepo-com.svg',
                 ontap: () {
-                  Get.toNamed(AppPages.initialroute);
+                  Get.toNamed(Routes.DashboardScreen);
                 },
                 textStyle: GoogleFonts.robotoFlex(
                     textStyle: const TextStyle(
@@ -74,7 +74,7 @@ class SideMenu extends StatelessWidget {
                 title: 'Category',
                 svgSrc: 'images/search-category.svg',
                 ontap: () {
-                  Get.toNamed(AppPages.screen2);
+                  Get.toNamed(Routes.Screen2);
                 },
                 textStyle: GoogleFonts.robotoFlex(
                     textStyle: const TextStyle(
@@ -86,7 +86,7 @@ class SideMenu extends StatelessWidget {
                 title: 'Customisation Groups',
                 svgSrc: 'images/calendar-note.svg',
                 ontap: () {
-                  Get.toNamed(AppPages.customgroup);
+                  Get.toNamed(Routes.CustomGroup);
                 },
                 textStyle: GoogleFonts.robotoFlex(
                     textStyle: const TextStyle(
@@ -98,7 +98,7 @@ class SideMenu extends StatelessWidget {
                 title: 'Item',
                 svgSrc: 'images/dish-svgrepo-com.svg',
                 ontap: () {
-                  Get.toNamed(AppPages.dishlist);
+                  Get.toNamed(Routes.DishList);
                 },
                 textStyle: GoogleFonts.robotoFlex(
                     textStyle: const TextStyle(
@@ -110,7 +110,7 @@ class SideMenu extends StatelessWidget {
                 title: 'Orders',
                 svgSrc: 'images/orders.svg',
                 ontap: () {
-                  Get.toNamed(AppPages.ongoingorders);
+                  Get.toNamed(Routes.OngoingOrders);
                 },
                 textStyle: GoogleFonts.robotoFlex(
                     textStyle: const TextStyle(
@@ -122,7 +122,7 @@ class SideMenu extends StatelessWidget {
                 title: 'Coupon',
                 svgSrc: 'images/tag--tags-bookmark-favorite.svg',
                 ontap: () {
-                  Get.toNamed(AppPages.couponlist);
+                  Get.toNamed(Routes.CouponList);
                 },
                 textStyle: GoogleFonts.robotoFlex(
                   textStyle: const TextStyle(

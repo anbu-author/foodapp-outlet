@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class OngoingOrders extends StatefulWidget {
@@ -18,6 +16,7 @@ class _OngoingOrdersState extends State<OngoingOrders> {
     final h = mediaQuery.size.height;
     final w = mediaQuery.size.width;
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
           children: [

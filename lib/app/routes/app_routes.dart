@@ -7,6 +7,7 @@ abstract class Routes {
   static const SignUpScreen = _Paths.SignUpScreen;
   static const DashboardScreen = _Paths.DashboardScreen;
   static const Screen2 = _Paths.Screen2;
+  static const CustomGroup = _Paths.CustomGroup;
   static const DishList = _Paths.DishList;
   static const OngoingOrders = _Paths.OngoingOrders;
   static const CouponList = _Paths.CouponList;

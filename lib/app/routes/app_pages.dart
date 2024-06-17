@@ -16,17 +16,7 @@ part 'app_routes.dart';
 
 class AppPages {
   AppPages._();
-
-  static const String initialroute = '/initialroute';
-  static const String SignIn = '/SignIn';
-  static const String signUpScreen = '/SignUpScreen';
-  static const String DashBoardScreen = '/dashboardscreen';
-  static const String screen2 = '/screen2';
-  static const String customgroup = '/customgroup';
-  static const String dishlist = '/dishlist';
-  static const String ongoingorders = '/ongoingorders';
-  static const String couponlist = '/couponlist';
-  static const String newcat = '/newcat';
+  static const INITIAL = Routes.SignInScreen;
 
   static final routes = [
     GetPage(
