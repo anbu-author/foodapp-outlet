@@ -1,6 +1,5 @@
 import 'package:flutter_getx_template/app/core/base/base_controller.dart';
 import 'package:get/get.dart';
-
 import '../../../data/repository/dish_list/dishlist_repository.dart';
 import '../models/dishlist_model.dart';
 

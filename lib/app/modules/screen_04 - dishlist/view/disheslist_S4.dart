@@ -61,14 +61,15 @@ class DishesList extends BaseView<DishListController> {
                           child: Text(
                             'Customisation Group',
                             style: GoogleFonts.k2d(
-                                textStyle: TextStyle(
-                                    color: Colors.black.withOpacity(0.8),
-                                    fontSize: 16)),
+                              textStyle: TextStyle(
+                                  color: Colors.black.withOpacity(0.8),
+                                  fontSize: 16),
+                            ),
                           ),
                         ),
                       ],
                     ),
-                    Divider(
+                    const Divider(
                       thickness: 0.4,
                     ),
                     Row(
