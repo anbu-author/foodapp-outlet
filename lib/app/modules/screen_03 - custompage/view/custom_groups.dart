@@ -4,8 +4,8 @@ import 'package:google_fonts/google_fonts.dart';
 import '../../../core/base/base_view.dart';
 import '../controller/custompage_controller.dart';
 
-class CustomGroup extends BaseView<CustompageController> {
-  CustomGroup();
+class CustomisationGroupsScreen extends BaseView<CustompageController> {
+  CustomisationGroupsScreen();
 
   @override
   Widget build(BuildContext context) {

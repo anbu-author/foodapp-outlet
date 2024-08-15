@@ -4,8 +4,8 @@ import 'package:google_fonts/google_fonts.dart';
 import '../../../core/base/base_view.dart';
 import '../controller/category_controller.dart';
 
-class Screen2 extends BaseView<CategoryController> {
-  Screen2();
+class CategoryScreen extends BaseView<CategoryController> {
+  CategoryScreen();
 
   @override
   Widget build(BuildContext context) {

@@ -1,20 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class OngoingOrders extends StatefulWidget {
-  const OngoingOrders({super.key});
+import '../controller/orders_controller.dart';
+
+class OngoingOrdersScreen extends StatefulWidget {
+  const OngoingOrdersScreen({super.key});
 
   @override
-  State<OngoingOrders> createState() => _OngoingOrdersState();
+  State<OngoingOrdersScreen> createState() => _OngoingOrdersScreenState();
 }
 
-class _OngoingOrdersState extends State<OngoingOrders> {
+class _OngoingOrdersScreenState extends State<OngoingOrdersScreen> {
+  final OrdersController controller = Get.find<OrdersController>();
+
   @override
   Widget build(BuildContext context) {
-    final mediaQuery = MediaQuery.of(context);
-
-    final h = mediaQuery.size.height;
-    final w = mediaQuery.size.width;
     return Scaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
@@ -35,7 +37,6 @@ class _OngoingOrdersState extends State<OngoingOrders> {
             Padding(
               padding: const EdgeInsets.all(20.0),
               child: Container(
-                height: h * 0.36,
                 width: double.infinity,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8),
@@ -58,9 +59,10 @@ class _OngoingOrdersState extends State<OngoingOrders> {
                           child: Text(
                             'Orders List',
                             style: GoogleFonts.k2d(
-                                textStyle: TextStyle(
-                                    color: Colors.black.withOpacity(0.8),
-                                    fontSize: 16)),
+                              textStyle: TextStyle(
+                                  color: Colors.black.withOpacity(0.8),
+                                  fontSize: 16),
+                            ),
                           ),
                         ),
                       ],
@@ -205,7 +207,8 @@ class _OngoingOrdersState extends State<OngoingOrders> {
                               Divider()
                             ],
                           ),
-                        )
+                        ),
+                        _ongoingOrders()
                       ],
                     ),
                   ],
@@ -216,5 +219,149 @@ class _OngoingOrdersState extends State<OngoingOrders> {
         ),
       ),
     );
+  }
+
+  _ongoingOrders() {
+    return Obx(() {
+      if (controller.ongoingOrderData.isEmpty) {
+        return const Center(
+          child: CircularProgressIndicator(),
+        );
+      } else {
+        return ListView.builder(
+          physics: NeverScrollableScrollPhysics(),
+          itemCount: controller.ongoingOrderData.length,
+          shrinkWrap: true,
+          itemBuilder: (context, index) {
+            final Color? backgroundColor =
+                index % 2 == 0 ? Colors.grey.withOpacity(0.1) : Colors.white;
+            return Padding(
+              padding: const EdgeInsets.only(left: 12, right: 12),
+              child: Column(
+                children: [
+                  const SizedBox(
+                    height: 0.1,
+                  ),
+                  Container(
+                    height: MediaQuery.of(context).size.height * 0.068,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: backgroundColor,
+                      border: Border(
+                        top: BorderSide(width: 0.1, color: Colors.grey),
+                        bottom: BorderSide(width: 0.1, color: Colors.grey),
+                      ),
+                    ),
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: Padding(
+                            padding: const EdgeInsets.only(left: 25),
+                            child: Text(
+                              (index + 1).toString(),
+                              textAlign: TextAlign.left,
+                              style: GoogleFonts.k2d(),
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                          child: Text(
+                            '',
+                            style: GoogleFonts.k2d(
+                              textStyle: TextStyle(
+                                color: Colors.black.withOpacity(0.7),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                          child: Text(
+                            '0.00',
+                            style: GoogleFonts.k2d(
+                              textStyle: TextStyle(
+                                color: Colors.black.withOpacity(0.7),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              SizedBox(
+                                height: 30,
+                                width: 30,
+                                child: SvgPicture.asset(
+                                    // dish?.isVeg == true
+                                    'images/veg-icon.svg'
+                                    // : 'images/non-veg-icon.svg',
+                                    ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Expanded(
+                          child: Text(
+                            'Inactive',
+                            style: GoogleFonts.k2d(
+                              textStyle: TextStyle(
+                                color: Colors.black.withOpacity(0.7),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                          child: Row(
+                            children: [
+                              SizedBox(
+                                width: 40,
+                                child: MaterialButton(
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(2)),
+                                  elevation: 5,
+                                  color: Color(0xffFF9600),
+                                  onPressed: () {},
+                                  child: Text(
+                                    'Edit',
+                                    style: GoogleFonts.k2d(
+                                        textStyle: TextStyle(
+                                            fontSize: 12, color: Colors.white)),
+                                  ),
+                                ),
+                              ),
+                              SizedBox(width: 10),
+                              SizedBox(
+                                width: 60,
+                                child: MaterialButton(
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(2)),
+                                  elevation: 5,
+                                  color: Colors.red,
+                                  onPressed: () {},
+                                  child: Text(
+                                    'Delete',
+                                    style: GoogleFonts.k2d(
+                                      textStyle: TextStyle(
+                                          fontSize: 12, color: Colors.white),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(
+                          height: 40,
+                        ),
+                      ],
+                    ),
+                  )
+                ],
+              ),
+            );
+          },
+        );
+      }
+    });
   }
 }

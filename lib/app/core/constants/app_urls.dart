@@ -6,4 +6,5 @@ class AppUrls {
   static const String signIn = '$user/login';
   static const String signUp = '$user/register';
   static const String dishList = '$baseUrl/api/outlet/dish/getDishes';
+  static const String ongoingOrder = '$baseUrl/api/outlet/order/active';
 }

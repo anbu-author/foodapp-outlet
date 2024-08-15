@@ -185,7 +185,7 @@ class ListWidget extends StatelessWidget {
     return Obx(() {
       if (controller.dishListData.isEmpty) {
         return Center(child: CircularProgressIndicator());
-      } else {
+      } else {  
         return Expanded(
             child: ListView.builder(
           itemCount: controller.dishListData.length,

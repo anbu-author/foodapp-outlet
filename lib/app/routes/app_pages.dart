@@ -2,11 +2,11 @@ import 'package:flutter_getx_template/app/modules/sign_up/bindings/sign_up_bindi
 import 'package:flutter_getx_template/app/modules/sign_up/views/sign_up_screen.dart';
 import 'package:get/get.dart';
 
+import '../modules/orders_screens/bindings/orders_bindings.dart';
 import '../modules/screen_01 - Dashboard/bindings/dashboard_bindings.dart';
 import '../modules/screen_02 - category/bindings/category_bindings.dart';
 import '../modules/screen_03 - custompage/bindings/custompage_bindings.dart';
 import '../modules/screen_04 - dishlist/bindings/dishlist_bindings.dart';
-import '../modules/screen_05 - orders/bindings/orders_bindings.dart';
 import '../modules/screen_06 - coupons/bindings/coupons_bindings.dart';
 import '../modules/sign_in/bindings/sign_in_binding.dart';
 import '../modules/sign_in/views/sign_in_screen.dart';
